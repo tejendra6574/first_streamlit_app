@@ -7,7 +7,7 @@ streamlit.title('My Parents New Healthy Diner')
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.header('Fruits Menu')
-streamlit.dataframe(fruityvice_response.json())
+streamlit.dataframe(pandas.json_normalize(fruityvice_response.json()))
 
 
 
